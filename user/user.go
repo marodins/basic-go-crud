@@ -12,7 +12,6 @@ import (
 
 func GetInfo(c echo.Context) error {
 	dbSess := c.Get("database").(*sessions.Session)
-	//fmt.Println(dbSess.Values["database"], dbSess.Values["db"])
 	return c.JSON(http.StatusOK, fmt.Sprintf("You're connected as %s", dbSess.Values["db"].(db.Connection).User))
 }
 

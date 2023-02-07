@@ -10,7 +10,6 @@ func UserSessions() echo.MiddlewareFunc {
 		return func(c echo.Context) error {
 			sess, _ := Store.Get(c.Request(), "database")
 			c.Set("database", sess)
-			//sess.Save(c.Request(), c.Response())
 			return next(c)
 		}
 	}
